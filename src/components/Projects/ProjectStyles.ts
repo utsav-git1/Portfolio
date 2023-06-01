@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 200vh;
+  height: auto;
   width: 100vw;
 `;
 
 export const CardContainer = styled.div`
-  height: 100%;
+  height: 200vh;
   width: 100vw;
   display: grid;
   grid-template-columns: 50% 50%;

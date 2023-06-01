@@ -1,4 +1,7 @@
-import { SectionHeader } from "../../Utility/GlobalStyles/GlobalComponents";
+import {
+  SectionDivider,
+  SectionHeader,
+} from "../../Utility/GlobalStyles/GlobalComponents";
 import {
   Card,
   CardContainer,
@@ -26,8 +29,26 @@ const Projects = () => {
             </Stack>
           </Description>
         </Card>
-        <Card></Card>
-        <Card></Card>
+        <Card>
+          <Image></Image>
+          <Description>
+            <DescriptionText>This is the MERN Project</DescriptionText>
+            <StackHeader>Stack</StackHeader>
+            <Stack>
+              <StackChip>Typescript</StackChip>
+            </Stack>
+          </Description>
+        </Card>
+        <Card>
+          <Image></Image>
+          <Description>
+            <DescriptionText>This is the MERN Project</DescriptionText>
+            <StackHeader>Stack</StackHeader>
+            <Stack>
+              <StackChip>Typescript</StackChip>
+            </Stack>
+          </Description>
+        </Card>
       </CardContainer>
     </Container>
   );
