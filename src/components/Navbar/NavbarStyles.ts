@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: black;
-  color: white;
   height: 10vh;
   width: 100vw;
   display: flex;
@@ -37,7 +35,6 @@ export const Links = styled.div`
 `;
 
 export const Items = styled.div`
-  color: white;
   cursor: pointer;
 
   &:hover{
