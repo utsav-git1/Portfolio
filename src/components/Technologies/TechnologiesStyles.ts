@@ -11,14 +11,18 @@ export const CardWrapper = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-between;
-`
+`;
 
 export const CardsContainer = styled.div`
   position: relative;
-  height: 100%;
+  height: auto;
   width: 100vw;
   display: flex;
   justify-content: space-around;
+
+  @media screen and (max-width: 800px) {
+    height: 30vh;
+  }
 `;
 
 export const TitleCard = styled.div`
@@ -28,7 +32,9 @@ export const TitleCard = styled.div`
   padding: 2%;
   border-radius: 10px;
   text-align: center;
-  line-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #000099;
   box-shadow: 3px 3px 5px 1px white;
   font-family: "Courier New", Courier, monospace;
@@ -38,7 +44,11 @@ export const TitleCard = styled.div`
 
   &:hover {
     transform: rotateY(-180deg);
-    color: red;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    font-size: 1.5em;
   }
 `;
 
@@ -53,6 +63,16 @@ export const DetailsCard = styled.div`
   box-shadow: 3px 3px 5px 1px white;
   font-family: "Courier New", Courier, monospace;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    font-size: 1.5em;
+  }
 `;
 
-
+export const Items = styled.p`
+  height:1%;
+  width: auto;
+`
