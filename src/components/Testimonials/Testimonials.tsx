@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SectionHeader } from "../../Utility/GlobalStyles/GlobalComponents";
 import {
   ActionButtons,
@@ -24,36 +24,76 @@ import {
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { BiAddToQueue } from "react-icons/bi";
 
-const slides = [
-  { name: "utsav" },
-  { name: "arora" },
-  { name: "arora1" },
-  { name: "arora2" },
-];
+type Review = {
+  reviews: { id?: string; name?: string; orgName?: string; review?: string }[];
+  name?: string;
+  orgName?: string;
+  review?: string;
+  postReview: (data: ReviewData) => Promise<void>;
+};
 
-const Testimonials = () => {
+type ReviewData = {
+  name?: string;
+  orgName?: string;
+  review?: string;
+};
+
+const Testimonials = (props: Review) => {
+  const reviews = props.reviews;
   const [slideIndex, setSlideIndex] = useState(0);
   const [open, setOpen] = useState(false);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const orgNameRef = useRef<HTMLInputElement>(null);
+  const reviewRef = useRef<HTMLInputElement>(null);
+
   return (
     <Container>
       <SectionHeader>Testimonials</SectionHeader>
       {open ? (
         <NewPost>
           <InputFields>
-            <NameInput type="text" maxLength={25} placeholder="Name" />
+            <NameInput
+              type="text"
+              maxLength={25}
+              placeholder="Name"
+              ref={nameRef}
+            />
             <CompanyInput
               type="text"
               maxLength={40}
               placeholder="Organization Name"
+              ref={orgNameRef}
             />
             <ReviewInput
               type="text"
               maxLength={150}
               placeholder="Your Review..."
+              ref={reviewRef}
             />
           </InputFields>
           <ActionButtons>
-            <SubmitButton>Save</SubmitButton>
+            <SubmitButton
+              onClick={() => {
+                setOpen(false);
+                props.postReview({
+                  name:
+                    nameRef.current?.value == ""
+                      ? "ANONYMOUS"
+                      : nameRef.current?.value,
+                  orgName:
+                    orgNameRef.current?.value == ""
+                      ? "ANONYMOUS"
+                      : orgNameRef.current?.value,
+                  review:
+                    orgNameRef.current?.value == ""
+                      ? "ANONYMOUS"
+                      : reviewRef.current?.value,
+                });
+                console.log(nameRef.current?.value);
+              }}
+            >
+              Save
+            </SubmitButton>
             <CloseButton onClick={() => setOpen(false)}>Cancel</CloseButton>
           </ActionButtons>
         </NewPost>
@@ -63,12 +103,12 @@ const Testimonials = () => {
             <BiAddToQueue />
           </PostReview>
           <SliderWrapper>
-            {slides.map(() => (
+            {reviews.slice(0,5).map((review) => (
               <Slide index={slideIndex}>
                 <Details>
-                  <NameField>Utsav</NameField>
-                  <CompanyField>ArisG</CompanyField>
-                  <ReviewField>Very Impressive Portfolio</ReviewField>
+                  <NameField>{review.name}</NameField>
+                  <CompanyField>{review.orgName}</CompanyField>
+                  <ReviewField>{review.review}</ReviewField>
                 </Details>
               </Slide>
             ))}
@@ -76,7 +116,9 @@ const Testimonials = () => {
           <Arrow
             direction="left"
             onClick={() =>
-              setSlideIndex(slideIndex > 0 ? slideIndex - 1 : slides.length - 1)
+              setSlideIndex(
+                slideIndex > 0 ? slideIndex - 1 : reviews.length - 1
+              )
             }
           >
             <AiFillCaretLeft />
@@ -84,7 +126,9 @@ const Testimonials = () => {
           <Arrow
             direction="right"
             onClick={() =>
-              setSlideIndex(slideIndex < slides.length - 1 ? slideIndex + 1 : 0)
+              setSlideIndex(
+                slideIndex < reviews.length - 1 ? slideIndex + 1 : 0
+              )
             }
           >
             <AiFillCaretRight />
