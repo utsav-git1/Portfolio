@@ -24,6 +24,7 @@ export const InputFields = styled.div`
   width: auto;
   margin: 1%;
 `;
+
 export const NameInput = styled.input`
   margin: 1%;
   padding: 0.5%;
@@ -32,6 +33,7 @@ export const NameInput = styled.input`
   outline: none;
   border: none;
 `;
+
 export const CompanyInput = styled.input`
   margin: 1%;
   padding: 0.5%;
@@ -50,8 +52,8 @@ export const ReviewInput = styled.input`
   outline: none;
   border: none;
 
-  &::placeholder{
-    color:red
+  &::placeholder {
+    color: red;
   }
 `;
 
@@ -63,19 +65,30 @@ export const ActionButtons = styled.div`
 `;
 
 export const SubmitButton = styled.button`
-width: 10vw;
-border-radius: 10px;
-font-size: 1rem;
-cursor: pointer;
-margin: 0 2%;
-`
+  width: 10vw;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 2%;
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    font-size: 1.5em;
+  }
+`;
+
 export const CloseButton = styled.button`
-width: 10vw;
-border-radius: 10px;
-font-size: 1rem;
-cursor: pointer;
-margin: 0 2%;
-`
+  width: 10vw;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 2%;
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    font-size: 1.5em;
+  }
+`;
 
 export const Wrapper = styled.div`
   position: relative;
@@ -98,6 +111,10 @@ export const SliderWrapper = styled.div`
   width: 50%;
   margin: auto;
   overflow-x: hidden;
+
+  @media screen and (max-width: 800px) {
+    width: 300px;
+  }
 `;
 
 export const Slide = styled.div<{ index: number }>`
@@ -127,7 +144,7 @@ export const NameField = styled.p`
   padding: 2% 5%;
   margin-left: 5%;
   background-color: #0000ff;
-  width: 20%;
+  width: 25%;
   border-radius: 10px;
 `;
 
@@ -165,5 +182,10 @@ export const Arrow = styled.div<{ direction: string }>`
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 800px) {
+    left: ${(props) => props.direction == "left" && "0%"};
+    right: ${(props) => props.direction == "right" && "0%"};
   }
 `;
