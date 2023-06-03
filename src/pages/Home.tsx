@@ -13,8 +13,9 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../config/firebase-config";
+import { autoReviews } from "../static/constants";
 
-type Review = {
+export type Review = {
   id?: string;
   name?: string;
   orgName?: string;
@@ -40,35 +41,55 @@ const Home = () => {
 
   useEffect(() => {
     const getReviews = async () => {
-      const data = await getDocs(reviewsCollectionRef);
-      setReviews(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      try {
+        const data = await getDocs(reviewsCollectionRef);
+        setReviews(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      } catch (err) {
+        console.log(err);
+        setReviews(autoReviews as Review[])
+      }
     };
     getReviews();
-  }, [reviews]);
+  }, []);
 
   useEffect(() => {
     const getViews = async () => {
-      const views = await getDocs(viewCollectionRef);
-      setViews({ count: views.docs[0].data().count + 1, id: views.docs[0].id });
+      try {
+        const views = await getDocs(viewCollectionRef);
+        setViews({
+          count: views.docs[0].data().count + 1,
+          id: views.docs[0].id,
+        });
+      } catch (err) {
+        console.log(err);
+      }
     };
     getViews();
-  },[]);
+  }, []);
 
   useEffect(() => {
     const updateViews = async () => {
       if (views) {
         const viewDoc = doc(db, "views", views.id);
         const latestViews = { count: views.count };
-        await updateDoc(viewDoc, latestViews);
+        try {
+          await updateDoc(viewDoc, latestViews);
+        } catch (err) {
+          console.log(err);
+        }
       }
     };
     updateViews();
   }, [views]);
 
   const postReview = async (data: ReviewData) => {
-    await addDoc(reviewsCollectionRef, data);
+    try {
+      await addDoc(reviewsCollectionRef, data);
+    } catch (err) {
+      console.log(err);
+    }
   };
-
+console.log(reviews)
   return (
     <div>
       <Navbar />
