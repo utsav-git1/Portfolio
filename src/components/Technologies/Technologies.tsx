@@ -10,7 +10,7 @@ import {
 
 const Technologies = () => {
   return (
-    <Container>
+    <Container id="tech">
       <SectionHeader>Technologies</SectionHeader>
       <CardWrapper>
         <CardsContainer>
