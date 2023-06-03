@@ -103,7 +103,7 @@ const Testimonials = (props: Review) => {
             <BiAddToQueue />
           </PostReview>
           <SliderWrapper>
-            {reviews.slice(0,5).map((review) => (
+            {reviews.slice(0, 5).map((review) => (
               <Slide index={slideIndex}>
                 <Details>
                   <NameField>{review.name}</NameField>
@@ -117,7 +117,7 @@ const Testimonials = (props: Review) => {
             direction="left"
             onClick={() =>
               setSlideIndex(
-                slideIndex > 0 ? slideIndex - 1 : reviews.length - 1
+                slideIndex > 0 ? slideIndex - 1 : reviews.slice(0, 5).length - 1
               )
             }
           >
@@ -127,7 +127,7 @@ const Testimonials = (props: Review) => {
             direction="right"
             onClick={() =>
               setSlideIndex(
-                slideIndex < reviews.length - 1 ? slideIndex + 1 : 0
+                slideIndex < reviews.slice(0, 5).length - 1 ? slideIndex + 1 : 0
               )
             }
           >
