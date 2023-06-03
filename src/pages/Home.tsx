@@ -14,6 +14,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../config/firebase-config";
 import { autoReviews } from "../static/constants";
+import Statusbar from "../components/Statusbar/Statusbar";
 
 export type Review = {
   id?: string;
@@ -28,12 +29,16 @@ type ReviewData = {
   review?: string;
 };
 
-type View = {
+export type View = {
   count: number;
   id: string;
 };
 
-const Home = () => {
+type ToggleTheme = {
+  toggleTheme: () => void;
+}
+
+const Home = (props : ToggleTheme ) => {
   const [reviews, setReviews] = useState<Review[]>([{}]);
   const [views, setViews] = useState<View>();
   const reviewsCollectionRef = collection(db, "reviews");
@@ -89,10 +94,10 @@ const Home = () => {
       console.log(err);
     }
   };
-console.log(reviews)
   return (
     <div>
       <Navbar />
+      <Statusbar views={views?.count} toggleTheme= {props.toggleTheme}/>
       <Header />
       <SectionDivider />
       <Projects />
