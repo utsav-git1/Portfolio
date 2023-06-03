@@ -34,10 +34,12 @@ export const Links = styled.div`
   flex: 1;
 `;
 
-export const Items = styled.div`
+export const Link = styled.a`
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 
-  &:hover{
+  &:hover {
     color: blueviolet;
     transition: all ease 0.3s;
   }
@@ -48,8 +50,20 @@ export const Icons = styled.div`
   margin-right: 4%;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     transition: all ease 0.3s;
     transform: scale(1.1);
+  }
+`;
+
+export const SocialIcons = styled.a`
+  color: white;
+  margin-right: 4%;
+  border-radius: 50px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
   }
 `;
