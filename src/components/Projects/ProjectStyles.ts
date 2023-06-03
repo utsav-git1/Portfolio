@@ -35,11 +35,13 @@ export const Card = styled.div`
 `;
 
 export const Image = styled.img`
-  object-fit: contain;
   height: 30%;
   width: 100%;
-  border-top-left-radius: 2%;
-  border-top-right-radius: 2%;
+  border-radius: 3%;
+
+  @media screen and (min-width: 800px) {
+    object-fit: cover;
+  }
 `;
 
 export const Description = styled.div`
@@ -48,12 +50,40 @@ export const Description = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 1%;
+  padding: 0 2%;
 `;
 
 export const DescriptionText = styled.p`
   object-fit: contain;
   flex: 2;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
+export const LinkWrapper = styled.div`
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+`;
+export const ExternalLinks = styled.a`
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  background: #008ae6;
+  border-radius: 15px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: #1a1aff;
+  }
+
+  @media screen and (max-width: 800px){
+    width: 30px;
+  }
 `;
 
 export const StackHeader = styled.h3`
@@ -68,6 +98,7 @@ export const Stack = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex: 1;
+  padding: 2%;
 `;
 
 export const StackChip = styled.div`
