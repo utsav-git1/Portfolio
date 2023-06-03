@@ -17,7 +17,7 @@ import { projects } from "../../static/constants";
 
 const Projects = () => {
   return (
-    <Container>
+    <Container id="projects">
       <SectionHeader>Projects</SectionHeader>
       <CardContainer>
         {projects.map((project) => (

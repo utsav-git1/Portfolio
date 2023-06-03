@@ -39,8 +39,8 @@ export const Image = styled.img`
   width: 100%;
   border-radius: 3%;
 
-  @media screen and (min-width: 800px) {
-    object-fit: cover;
+  @media screen and (max-width: 800px) {
+    object-fit: contain;
   }
 `;
 
