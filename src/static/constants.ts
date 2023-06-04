@@ -65,3 +65,16 @@ export const autoReviews = [
     review: "Loved the product",
   },
 ];
+
+export const about = [
+  {
+    description:`Software Engineer at Aris Global for 2 years.`
+  },
+  {
+    description:`Using React, designed several Responsive User Interfaces.`
+  },  {
+    description:`Enthusiastic learner and keep enhancing my knowledge to feel motivated.`
+  },  {
+    description:`Along with a Web Developer, I am learning React Native to open the doors for Mobile App Development.`
+  },
+]
