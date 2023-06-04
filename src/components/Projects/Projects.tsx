@@ -20,8 +20,8 @@ const Projects = () => {
     <Container id="projects">
       <SectionHeader>Projects</SectionHeader>
       <CardContainer>
-        {projects.map((project) => (
-          <Card>
+        {projects.map((project, index) => (
+          <Card key={index}>
             <Image src={project.img}></Image>
             <Description>
               <DescriptionText>{project.description}</DescriptionText>
@@ -31,8 +31,8 @@ const Projects = () => {
               </LinkWrapper>
               <StackHeader>Stack</StackHeader>
               <Stack>
-                {project.techStack.map((tech) => (
-                  <StackChip>{tech}</StackChip>
+                {project.techStack.map((tech, index) => (
+                  <StackChip key={index}>{tech}</StackChip>
                 ))}
               </Stack>
             </Description>

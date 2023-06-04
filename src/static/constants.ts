@@ -1,6 +1,6 @@
 export const projects = [
   {
-    img: "../../public/assets/images/WishKart.png",
+    img: "../../assets/images/WishKart.png",
     description:
       "WishKart is an E-Commerce Platform for latest variety of branded products. It offers all the latest features to its users.",
     visit: "https://wishkart-app-prod.netlify.app",
@@ -8,7 +8,7 @@ export const projects = [
     techStack: ["React", "Redux", "JS", "Node", "MonogDB", "Express"],
   },
   {
-    img: "../../public/assets/images/WeatherApp.png",
+    img: "../../assets/images/WeatherApp.png",
     description:
       "Weather App for accurate daily weather reports of the location given manually/automatically by the user.",
     visit: "https://weather-app-prod.netlify.app",
@@ -16,7 +16,7 @@ export const projects = [
     techStack: ["React", "TypeScript", "Styled-Components"],
   },
   {
-    img: "../../public/assets/images/Todo App.png",
+    img: "../../assets/images/Todo App.png",
     description:
       "Task Manager App to maintain a list of Todo Tasks. It allows users to create and mark the task as Done/Pending. Set Reminders for the task. Update/Delete existing tasks.",
     visit: "https://todo-app-prod.netlify.app/",
@@ -78,3 +78,7 @@ export const about = [
     description:`Along with a Web Developer, I am learning React Native to open the doors for Mobile App Development.`
   },
 ]
+
+export const frontEndTech = ['React', 'Redux', 'JavaScript', 'TypeScript']
+
+export const backEndTech = ['Node', 'Express', 'MonogDB', 'Postgres']

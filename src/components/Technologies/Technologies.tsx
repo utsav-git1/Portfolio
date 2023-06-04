@@ -1,4 +1,5 @@
 import { SectionHeader } from "../../Utility/GlobalStyles/GlobalComponents";
+import { backEndTech, frontEndTech } from "../../static/constants";
 import {
   CardWrapper,
   CardsContainer,
@@ -16,20 +17,17 @@ const Technologies = () => {
         <CardsContainer>
           <TitleCard>Front End Development</TitleCard>
           <DetailsCard>
-            <Items>React </Items>
-            <Items>Redux </Items>
-            <Items>JavaScript</Items>
-            <Items>TypeScript</Items>
+            {frontEndTech.map((tech, index) => (
+              <Items key={index}>{tech}</Items>
+            ))}
           </DetailsCard>
         </CardsContainer>
         <CardsContainer>
           <TitleCard>Back End Development</TitleCard>
           <DetailsCard>
-            <Items>Node</Items>
-            <Items>Express</Items>
-            <Items>MongoDB</Items>
-            <Items>Postgres</Items>
-            <Items>Java</Items>
+            {backEndTech.map((tech, index) => (
+              <Items key={index}>{tech}</Items>
+            ))}
           </DetailsCard>
         </CardsContainer>
       </CardWrapper>

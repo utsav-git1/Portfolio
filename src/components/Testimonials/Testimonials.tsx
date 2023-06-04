@@ -26,9 +26,9 @@ import { BiAddToQueue } from "react-icons/bi";
 
 type Review = {
   reviews: { id?: string; name?: string; orgName?: string; review?: string }[];
-    name?: string;
-    orgName?: string;
-    review?: string;
+  name?: string;
+  orgName?: string;
+  review?: string;
   postReview: (data: ReviewData) => Promise<void>;
 };
 
@@ -102,8 +102,8 @@ const Testimonials = (props: Review) => {
             <BiAddToQueue />
           </PostReview>
           <SliderWrapper>
-            {reviews.slice(0, 5).map((review) => (
-              <Slide index={slideIndex}>
+            {reviews.slice(0, 5).map((review, index) => (
+              <Slide index={slideIndex} key={index}>
                 <Details>
                   <NameField>{review.name}</NameField>
                   <CompanyField>{review.orgName}</CompanyField>

@@ -8,8 +8,8 @@ const About = () => {
       <SectionHeader>About</SectionHeader>
       <Description>
         <List>
-          {about.map((item) => (
-            <ListItems>{item.description}</ListItems>
+          {about.map((item, index) => (
+            <ListItems key={index}>{item.description}</ListItems>
           ))}
         </List>
       </Description>

@@ -64,11 +64,15 @@ const Home = (props: ToggleTheme) => {
       try {
         const views = await getDocs(viewCollectionRef);
         setViews({
-          count: views.docs[0].data().count + 1 ?? 100,
-          id: views.docs[0].id ?? 1,
+          count: views.docs[0].data().count + 1,
+          id: views.docs[0].id,
         });
       } catch (err) {
         console.log(err);
+        setViews({
+          count: 100,
+          id: "1",
+        });
       }
     };
     getViews();
