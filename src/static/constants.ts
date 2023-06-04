@@ -13,7 +13,7 @@ export const projects = [
       "Weather App for accurate daily weather reports of the location given manually/automatically by the user.",
     visit: "https://weather-app-prod.netlify.app",
     source: "https://github.com/utsav-git1/WeatherApp.git",
-    techStack: ["React", "TypeScript", "Styled-Components"],
+    techStack: ["Styled Components", "React", "TypeScript"],
   },
   {
     img: "../../assets/images/Todo App.png",

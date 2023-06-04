@@ -4,6 +4,7 @@ export const Container = styled.div`
   height: 10vh;
   width: 100vw;
   display: flex;
+  align-items: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.5rem;
 
@@ -32,6 +33,7 @@ export const Links = styled.div`
   align-items: center;
   justify-content: flex-end;
   flex: 1;
+  margin-left: 20px;
 `;
 
 export const Link = styled.a`
@@ -42,17 +44,6 @@ export const Link = styled.a`
   &:hover {
     color: blueviolet;
     transition: all ease 0.3s;
-  }
-`;
-
-export const Icons = styled.div`
-  color: white;
-  margin-right: 4%;
-  cursor: pointer;
-
-  &:hover {
-    transition: all ease 0.3s;
-    transform: scale(1.1);
   }
 `;
 
