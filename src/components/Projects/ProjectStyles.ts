@@ -75,7 +75,7 @@ export const ExternalLinks = styled.a`
   color: #ffffff;
   font-size: 1.2rem;
   padding: 1rem 1.5rem;
-  background: ${props=> props.theme == darkTheme ? `#000000` : `#009933`};
+  background: ${(props) => (props.theme == darkTheme ? `#000000` : `#009933`)};
   border-radius: 15px;
   transition: 0.5s;
   display: flex;
@@ -83,7 +83,8 @@ export const ExternalLinks = styled.a`
   align-items: center;
 
   &:hover {
-    background: ${props=> props.theme == darkTheme ? `#004d99` : `#00ff55`};
+    background: ${(props) =>
+      props.theme == darkTheme ? `#004d99` : `#00ff55`};
   }
 
   @media screen and (max-width: 800px) {
@@ -107,13 +108,15 @@ export const Stack = styled.div`
 `;
 
 export const StackChip = styled.div`
-  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
   width: auto;
   padding: 1% 4%;
   border-radius: 25px;
-  text-align: center;
-  line-height: 4vh;
   margin: 1%;
   font-family: "Courier New", Courier, monospace;
-  background-color: ${props=> props.theme == darkTheme ? `#8080ff` : `#00b300`};
+  background-color: ${(props) =>
+    props.theme == darkTheme ? `#8080ff` : `#00b300`};
 `;
