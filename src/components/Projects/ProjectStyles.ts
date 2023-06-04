@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darkTheme } from "../../Utility/GlobalStyles/theme";
 
 export const Container = styled.div`
   height: auto;
@@ -22,10 +23,14 @@ export const CardContainer = styled.div`
 export const Card = styled.div`
   height: 90%;
   width: 50%;
-  background-color: #000099;
+  background-image: ${(props) =>
+    props.theme == darkTheme
+      ? `linear-gradient(to left, rgba(0,0,0,0), rgba(0,255,255,1))`
+      : `linear-gradient(to left, rgba(0,0,0,0), rgba(0,50,0,1))`};
   margin-bottom: 6%;
   box-shadow: 3px 3px 5px 1px white;
   border-radius: 2%;
+  color: #ffffff;
 
   @media screen and (max-width: 500px) {
     width: 180px;
@@ -70,7 +75,7 @@ export const ExternalLinks = styled.a`
   color: #ffffff;
   font-size: 1.2rem;
   padding: 1rem 1.5rem;
-  background: #008ae6;
+  background: ${props=> props.theme == darkTheme ? `#000000` : `#009933`};
   border-radius: 15px;
   transition: 0.5s;
   display: flex;
@@ -78,10 +83,10 @@ export const ExternalLinks = styled.a`
   align-items: center;
 
   &:hover {
-    background: #1a1aff;
+    background: ${props=> props.theme == darkTheme ? `#004d99` : `#00ff55`};
   }
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 800px) {
     width: 30px;
   }
 `;
@@ -110,5 +115,5 @@ export const StackChip = styled.div`
   line-height: 4vh;
   margin: 1%;
   font-family: "Courier New", Courier, monospace;
-  background-color: #8080ff;
+  background-color: ${props=> props.theme == darkTheme ? `#8080ff` : `#00b300`};
 `;

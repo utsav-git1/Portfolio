@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darkTheme } from "../../Utility/GlobalStyles/theme";
 
 export const Container = styled.div`
   height: auto;
@@ -35,7 +36,8 @@ export const TitleCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000099;
+  background-color: ${props => props.theme == darkTheme ? `#000099` : `#009933`};
+  color : #ffffff;
   box-shadow: 3px 3px 5px 1px white;
   font-family: "Courier New", Courier, monospace;
   z-index: 5;
@@ -59,7 +61,8 @@ export const DetailsCard = styled.div`
   padding: 2%;
   border-radius: 10px;
   text-align: center;
-  background-color: #000099;
+  background-color: ${props => props.theme == darkTheme ? `#000099` : `#009933`};
+  color : #ffffff;
   box-shadow: 3px 3px 5px 1px white;
   font-family: "Courier New", Courier, monospace;
   z-index: 2;

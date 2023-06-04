@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darkTheme } from "../../Utility/GlobalStyles/theme";
 
 export const Container = styled.div`
   height: auto;
@@ -10,7 +11,7 @@ export const NewPost = styled.div`
   height: 30vh;
   width: 70%;
   margin: auto;
-  background-color: #4d94ff;
+  background-color: ${props => props.theme == darkTheme ? `#4d94ff` : `#248f24`};
   z-index: 5;
   border-radius: 20px;
   padding: 2%;
@@ -122,7 +123,7 @@ export const Slide = styled.div<{ index: number }>`
   width: 70%;
   height: 80%;
   margin: 5px;
-  background-color: #66d9ff;
+  background-color: ${props => props.theme == darkTheme ? `#66d9ff` : `#248f24`};
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.index * -100}%);
   display: flex;
@@ -143,7 +144,7 @@ export const Details = styled.div`
 export const NameField = styled.p`
   padding: 2% 5%;
   margin-left: 5%;
-  background-color: #0000ff;
+  background-color: ${props => props.theme == darkTheme ? `#0000ff` : `#ffffff`};
   width: 25%;
   border-radius: 10px;
 `;
@@ -151,7 +152,7 @@ export const NameField = styled.p`
 export const CompanyField = styled.p`
   padding: 2% 5%;
   margin-left: 5%;
-  background-color: #0000ff;
+  background-color: ${props => props.theme == darkTheme ? `#0000ff` : `#ffffff`};
   width: 30%;
   border-radius: 10px;
 `;
@@ -159,7 +160,7 @@ export const CompanyField = styled.p`
 export const ReviewField = styled.p`
   padding: 2% 5%;
   margin-left: 5%;
-  background-color: #0000ff;
+  background-color: ${props => props.theme == darkTheme ? `#0000ff` : `#ffffff`};
   width: auto;
   border-radius: 10px;
 `;
@@ -172,7 +173,7 @@ export const Arrow = styled.div<{ direction: string }>`
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: #66d9ff;
+  background-color: ${props => props.theme == darkTheme ? `#66d9ff` : `#248f24`};
   height: 30px;
   width: 30px;
   display: flex;
