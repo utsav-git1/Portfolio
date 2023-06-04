@@ -16,6 +16,7 @@ import { db } from "../config/firebase-config";
 import { autoReviews } from "../static/constants";
 import Statusbar from "../components/Statusbar/Statusbar";
 import About from "../components/About/About";
+import Contacts from "../components/Contacts/Contacts";
 
 export type Review = {
   id?: string;
@@ -108,6 +109,9 @@ const Home = (props: ToggleTheme) => {
       <About />
       <SectionDivider />
       <Testimonials reviews={reviews} postReview={postReview} />
+      <SectionDivider />
+      <Contacts />
+      <SectionDivider />
     </div>
   );
 };
