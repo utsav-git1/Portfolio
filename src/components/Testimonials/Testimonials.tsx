@@ -26,9 +26,9 @@ import { BiAddToQueue } from "react-icons/bi";
 
 type Review = {
   reviews: { id?: string; name?: string; orgName?: string; review?: string }[];
-  name?: string;
-  orgName?: string;
-  review?: string;
+    name?: string;
+    orgName?: string;
+    review?: string;
   postReview: (data: ReviewData) => Promise<void>;
 };
 
@@ -85,11 +85,10 @@ const Testimonials = (props: Review) => {
                       ? "ANONYMOUS"
                       : orgNameRef.current?.value,
                   review:
-                    orgNameRef.current?.value == ""
+                    reviewRef.current?.value == ""
                       ? "ANONYMOUS"
                       : reviewRef.current?.value,
                 });
-                console.log(nameRef.current?.value);
               }}
             >
               Save
