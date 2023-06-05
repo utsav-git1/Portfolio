@@ -21,7 +21,7 @@ export const projects = [
       "Task Manager App to maintain a list of Todo Tasks. It allows users to create and mark the task as Done/Pending. Set Reminders for the task. Update/Delete existing tasks.",
     visit: "https://todo-app-prod.netlify.app/",
     source: "https://github.com/utsav-git1/TodoApp.git",
-    techStack: ["React", "JavaScript"],
+    techStack: ["React", "JavaScript", "React Hooks"],
   },
 ];
 

@@ -46,6 +46,7 @@ export const Image = styled.img`
 
   @media screen and (max-width: 800px) {
     object-fit: contain;
+    height: auto;
   }
 `;
 
