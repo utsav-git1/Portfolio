@@ -19,6 +19,7 @@ export const Logo = styled.div`
   flex: 1;
   padding: 3vh 2%;
   cursor: pointer;
+  font-size: 0.9em;
 `;
 
 export const Navigations = styled.div`
@@ -40,6 +41,7 @@ export const Link = styled.a`
   cursor: pointer;
   text-decoration: none;
   color: white;
+  font-size: 0.9em;
 
   &:hover {
     color: blueviolet;
