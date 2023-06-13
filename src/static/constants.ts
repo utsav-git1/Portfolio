@@ -1,6 +1,8 @@
 export const projects = [
   {
     img: "../../assets/images/WishKart.png",
+    alt:"wishkart",
+    title:"WishKart",
     description:
       "WishKart is an E-Commerce Platform for latest variety of branded products. It offers all the latest features to its users.",
     visit: "https://wishkart-app-prod.netlify.app",
@@ -9,6 +11,8 @@ export const projects = [
   },
   {
     img: "../../assets/images/WeatherApp.png",
+    alt:"weatherapp",
+    title:"Weather App",
     description:
       "Weather App for accurate daily weather reports of the location given manually/automatically by the user.",
     visit: "https://weather-app-prod.netlify.app",
@@ -17,8 +21,10 @@ export const projects = [
   },
   {
     img: "../../assets/images/Todo App.png",
+    alt:"taskmaster",
+    title:"Task Master",
     description:
-      "Task Manager App to maintain a list of Todo Tasks. It allows users to create and mark the task as Done/Pending. Set Reminders for the task. Update/Delete existing tasks.",
+      "Task Manager App to maintain a list of Todo Tasks. It allows users to create and mark the task as Done/Pending. Set Reminders, Update/Delete existing tasks.",
     visit: "https://todo-app-prod.netlify.app/",
     source: "https://github.com/utsav-git1/TodoApp.git",
     techStack: ["React", "JavaScript", "React Hooks"],
