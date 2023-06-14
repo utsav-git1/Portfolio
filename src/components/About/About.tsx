@@ -4,8 +4,8 @@ import { about } from "../../static/constants";
 
 const About = () => {
   return (
-    <Container id="about">
-      <SectionHeader>About</SectionHeader>
+    <Container>
+      <SectionHeader  id="about">About</SectionHeader>
       <Description>
         <List>
           {about.map((item, index) => (

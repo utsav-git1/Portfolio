@@ -24,8 +24,8 @@ const Projectcarousel = () => {
   console.log(projects.map((p) => p.description));
 
   return (
-    <Container id="projects">
-      <SectionHeader>Projects</SectionHeader>
+    <Container>
+      <SectionHeader  id="projects">Projects</SectionHeader>
       <CardContainer>
         {projects.map((project, index) => (
           <Card index={slideIndex} key={index}>

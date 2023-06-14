@@ -7,6 +7,7 @@ export const Container = styled.div`
   height: auto;
   width: 90vw;
   position: relative;
+  margin-bottom: 10%;
 `;
 
 export const CardContainer = styled.div`
