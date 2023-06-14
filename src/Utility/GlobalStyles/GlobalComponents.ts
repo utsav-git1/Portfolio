@@ -11,7 +11,7 @@ export const SectionHeader = styled.h1`
     background-image: ${(props) =>
       props.theme == darkTheme
         ? `linear-gradient(to left, rgba(0,0,0,0), rgba(50,255,255,1))`
-        : `linear-gradient(to left, rgba(0,0,0,0), rgba(0,255,255,1))`};
+        : `linear-gradient(to left, rgba(0,50,0,0), rgba(0,150,0,1))`};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
