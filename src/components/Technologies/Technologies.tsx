@@ -11,8 +11,8 @@ import {
 
 const Technologies = () => {
   return (
-    <Container id="tech">
-      <SectionHeader>Technologies</SectionHeader>
+    <Container>
+      <SectionHeader  id="tech">Technologies</SectionHeader>
       <CardWrapper>
         <CardsContainer>
           <TitleCard>Front End Development</TitleCard>
